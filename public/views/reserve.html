@@ -1,0 +1,23 @@
+<Body background="">
+  <H1>Reserve</H1>
+  <pre>
+<form class = "reservationForm" method = "post">
+Username : <input type="text" name="userName" ng-model= "reservation.userName" required>
+
+Reservation Date : <input type="date" name="reservation_date" ng-model= "reservation.reservation_date" required>
+
+Reservation Hour : <input type="time" name="reservation_hour" ng-model= "reservation.reservation_hour" required>
+
+<div class="col-sm-10"><h4>{{sarah.data}}</h4></div>
+<div class="col-sm-10"><h4>{{noreserve}}</h4></div>
+<div class="col-sm-10"><h4>{{paid.data}}</h4></div>
+
+</pre>
+  <button type="button" class="btn btn-primary btn-sm" ng-click="reserve()">Reserve</button>
+
+  <!-- <button type = "button" class = "btn btn-primary btn-sm" ng-click="redirect()">Checkout</button> -->
+
+<div class="col-sm-10"><h4>{{noReservation}}</h4></div>
+
+</form>
+</Body>

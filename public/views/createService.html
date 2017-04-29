@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="row">
+            <strong>Service Name: </strong>
+            <input type="text" ng-model="newService.serviceName" class="form-control" required>
+        </div>
+
+        <div class="row">
+            <strong>Description</strong>
+            <input type="text" ng-model="newService.description" class="form-control" required>
+        </div>
+
+        <!--form>
+          Service Name:
+        <input type="text" ng-model="newService.serviceName" class="form-control" required>
+      </form>-->
+
+        <form>
+          Select a Category:
+          <select ng-model="newService.category" class="form-control">
+            <option value="">
+            <option value="Cinema"> Cinema
+            <option value="Concerts"> Concerts
+            <option value="Escape Rooms">Escape Rooms
+            <option value="Laser Tag"> Laser Tag
+            <option value="Outdoor Activities"> Outdoor Activities
+            <option value="Camps"> Camps
+            <option value="Indoor Skiing">Indoor Skiing
+          </select>
+        </form>
+
+        <div class="row">
+            <strong>Address</strong>
+            <input type="text" ng-model="newService.address" class="form-control"required>
+        </div>
+
+        <div class="row">
+            <strong>Price</strong>
+            <input type="number" ng-model="newService.price" class="form-control">
+        </div>
+
+        <div class="row">
+            <strong>Offer Descripiton </strong>
+            <input type="text" ng-model="newService.offerDescription" class="form-control">
+        </div>
+
+        <div class="row">
+            <strong>Beginning Working Hours</strong>
+            <input type="time" ng-model="newService.beginWorkingHours" class="form-control">
+        </div>
+
+        <div class="row">
+            <strong>Ending Working Hours</strong>
+            <input type="time" ng-model="newService.endWorkingHours" class="form-control">
+        </div>
+
+        <div class="row">
+            <strong>Working days</strong>
+            <input type="text" ng-model="newService.workingdays" class="form-control">
+        </div>
+
+        <div class="row">
+            <strong>Website Link</strong>
+            <input type="url" ng-model="newService.WebsiteURL" class="form-control">
+         </div>
+
+
+            <form>
+              Select a Location:
+              <select ng-model="newService.location" class="form-control">
+                <option value="">
+                <option value="6th of October">6th of October
+                <option value="Agouza">Agouza
+                <option value="Dokki">Dokki
+                <option value="Ard el Golf">Ard el Golf
+                <option value="El Katameya">El Katameya
+                <option value="El Obour City">El Obour City
+              </select>
+            </form>
+
+
+        <button ng-click="createService()">Add Service</button>
+    </div>
+</div>

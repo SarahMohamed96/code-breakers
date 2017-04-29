@@ -1,0 +1,31 @@
+<Body background = "">
+<H1>Change your Reservation</H1>
+<pre>
+<form class = "reservationForm" method = "post" >
+Username : <input type="text" name="userName" ng-model= "changeReservation.userName" required>
+<div class = "help-block" ng-messages= "reservationForm.userName.$error">
+  <!-- <div ng-messages-include = "messages.html"</div> -->
+</div>
+Old Reservation Date : <input type="date" name="old_reservation_date" ng-model= "changeReservation.old_reservation_date" required>
+<div class = "help-block" ng-messages= "reservationForm.old_reservation_date.$error">
+  <!-- <div ng-messages-include = "messages.html"</div> -->
+</div>
+Old Reservation Hour : <input type="time" name="old_reservation_hour" ng-model= "changeReservation.old_reservation_hour" required>
+<div class = "help-block" ng-messages= "reservationForm.old_reservation_hour.$error">
+  <!-- <div ng-messages-include = "messages.html"</div> -->
+</div>
+New Reservation Date : <input type="date" name="new_reservation_date" ng-model= "changeReservation.new_reservation_date" required>
+<div class = "help-block" ng-messages= "reservationForm.new_reservation_date.$error">
+  <!-- <div ng-messages-include = "messages.html"</div> -->
+</div>
+New Reservation Hour : <input type="time" name="new_reservation_hour" ng-model= "changeReservation.new_reservation_hour" required>
+<div class = "help-block" ng-messages= "reservationForm.new_reservation_hour.$error">
+  <!-- <div ng-messages-include = "messages.html"</div> -->
+</div>
+<div class="col-sm-10"><h3>{{change2.data}}</h3></div>
+<div class="col-sm-10"><h4>{{nochange}}</h4></div>
+
+</pre>
+<button type="button"  class="btn btn-primary btn-sm" ng-click = "change()">Save Changes</button>
+</form>
+</Body>

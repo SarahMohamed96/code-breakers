@@ -1,0 +1,13 @@
+{
+  "name": "angul",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "animate.css": "latest",
+    "angular": "1.6.3",
+    "angular-aria":"1.6.3",
+    "angular-route": "1.6.3",
+    "angular-random-string": "^0.1.0"
+  }
+}

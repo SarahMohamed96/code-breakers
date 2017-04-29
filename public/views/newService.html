@@ -1,0 +1,149 @@
+<nav class="navbar navbar-default">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="/">Home</a>
+         </div>
+
+         <div id="navbar" class="navbar-collapse collapse">
+           <ul class="nav navbar-nav navbar-right">
+             <li><a ui-sref="search">Services<span class="sr-only">(current)</span></a></li>
+             <ul class="nav navbar-nav">
+               <li><a ui-sref="login">Login</a></li>
+             </ul>
+             <ul class="nav navbar-nav">
+               <li><a ui-sref="signup">Sign Up</a></li>
+             </ul>
+           </ul>
+         </div><!--/.nav-collapse -->
+       </div><!--/.container-fluid -->
+     </nav>
+
+<div class="container bootstrap snippet">
+    <div class="row">
+  		<div class="col-sm-10"><h1>{{service.serviceName}}</h1></div>
+    	<!-- <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div> -->
+    </div>
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
+
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Profile</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Category</strong></span>{{service.category}}</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Location</strong></span>{{service.location}}</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Rating</strong></span> {{service.rating}}</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Price</strong></span> {{service.price}}</li>
+
+          </ul>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">Address</div>
+            <div class="panel-body">{{service.address}}</div>
+          </div>
+
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Working Hours</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>From: </strong></span>{{service.beginWorkingHours}}</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>To: </strong></span>{{service.endWorkingHours}}</li>
+          </ul>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">Current Offers</div>
+            <div class="panel-body">{{service.offerDescription}}</div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">Website</div>
+        <div class="panel-body">{{service.WebsiteURL}}</div>
+          </div>
+
+
+
+
+        </div><!--/col-3-->
+    	<div class="col-sm-9">
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+            <li><a ui-sref="reviews({id: service._id})" data-toggle="tab">Reviews</a></li>
+            <li><a ui-sref="reserve({id: service._id})" data-toggle="tab">Reserve Now</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+
+                      <blockquote>
+                      <p class="small" class="text-justify">{{service.description}}</p>
+                     </blockquote>
+                    </tr>
+                  </thead>
+
+                  <h5>Any Problems?</h5>
+                  <form role="form">
+                    <div class="form-group">
+                      <textarea class="form-control" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                  </form>
+                  <br><br>
+
+
+
+
+                </table>
+                <hr>
+                <div class="row">
+                  <div class="col-md-4 col-md-offset-4 text-center">
+                  	<ul class="pagination" id="myPager"></ul>
+                  </div>
+                </div>
+              </div><!--/table-resp-->
+
+              <hr>
+
+             </div><!--/tab-pane-->
+             <div class="tab-pane" id="messages">
+
+               <h2></h2>
+
+               <ul class="list-group">
+                  <li class="list-group-item text-muted">Inbox</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Here is your a link to the latest summary report from the..</a> 2.13.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Hi Joe, There has been a request on your account since that was..</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Nullam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Thllam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Wesm sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+                  <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is assaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
+
+                </ul>
+
+             </div><!--/tab-pane-->
+
+
+        <!-- <div class="container">
+
+
+         <h4>Description</h4>
+
+          <blockquote>
+          <p class="small" class="text-justify">For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+
+        </blockquote>
+       </div> -->
+
+
+
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->

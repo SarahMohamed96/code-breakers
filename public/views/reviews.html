@@ -1,0 +1,133 @@
+<nav class="navbar navbar-default">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="/">Home</a>
+         </div>
+
+         <div id="navbar" class="navbar-collapse collapse">
+           <ul class="nav navbar-nav navbar-right">
+             <li><a ui-sref="search">Services<span class="sr-only">(current)</span></a></li>
+             <ul class="nav navbar-nav">
+               <li><a ui-sref="login">Login</a></li>
+             </ul>
+             <ul class="nav navbar-nav">
+               <li><a ui-sref="signup">Sign Up</a></li>
+             </ul>
+           </ul>
+         </div><!--/.nav-collapse -->
+       </div><!--/.container-fluid -->
+     </nav>
+
+<div class="container bootstrap snippet">
+    <div class="row">
+  		<div class="col-sm-10"><h1>{{service.serviceName}}</h1></div>
+    	<div class="col-sm-2">
+        <!-- <a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a> -->
+        <form>
+           Select a rating:
+           <select ng-model="rate.rating" class="form-control">
+             <option value="">
+             <option value="1"> 1
+             <option value="2"> 2
+             <option value="3"> 3
+             <option value="4"> 4
+             <option value="5"> 5
+           </select>
+             <button ng-click="updateRating()">Rate</button>
+         </form>
+      </div>
+    </div>
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
+
+
+        <ul class="list-group">
+            <li class="list-group-item text-muted">Profile</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Category</strong></span>{{service.category}}</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Location</strong></span>{{service.location}}</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Rating</strong></span> {{service.rating}}</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Price</strong></span> {{service.price}}</li>
+
+          </ul>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">Address</div>
+            <div class="panel-body">{{service.address}}</div>
+          </div>
+
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Working Hours</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>From: </strong></span>9:00 AM</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>To: </strong></span>12:00 PM</li>
+          </ul>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">Current Offers</div>
+            <div class="panel-body">{{service.offerDescription}}</div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">Website</div>
+            <div class="panel-body">{{service.WebsiteURL}}</a></div>
+          </div>
+
+
+        </div><!--/col-3-->
+
+
+    	<div class="col-sm-9">
+        <ul class="nav nav-tabs" id="myTab">
+              <li><a ui-sref="service({id: service._id})" data-toggle="tab">Home</a></li>
+              <li class="active"><a href="#home" data-toggle="tab">Reviews</a></li>
+              <li><a ui-sref="reserve({id: service._id})" data-toggle="tab">Reserve Now</a></li>
+
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+              <div class="table-responsive">
+                <table class="table table-hover">
+
+
+
+                  <h2></h2>
+
+                   <div  ng-repeat="review in reviews track by $index">
+
+
+                            <h2></h2>
+
+                            <ul class="list-group">
+
+                               <li class="list-group-item text-left"> {{review.reviewName}} </li>
+
+                             </ul>
+                </table>
+
+                <div>
+                  <h5>Review:</h5>
+                  <form role="form">
+                    <div class="form-group">
+                      <textarea class="form-control" ng-model = "review.reviewName"rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm" ng-click = "reviewsubmit()" >Submit</button>
+                  </form>
+                  <br><br>
+                </div>
+
+
+
+              </div><!--/table-resp-->
+
+             </div><!--/tab-pane-->
+
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->

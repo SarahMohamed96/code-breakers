@@ -1,0 +1,18 @@
+<div ng-if="!isAuthenticated">
+  <p>You are not yet authenticated. <a ui-sref="login">Log in.</a></p>
+</div>
+<div ng-if="isAuthenticated">
+<div>
+  <h2>Welcome {{ vm.serviceProvider.username }}</h2>
+  <h3>Your email is {{ vm.serviceProvider.email }} !</h3>
+<a class="navbar-brand" href="updateService.html">Edit Service</a>
+  <li><a ui-sref="service" >Service</a></li>
+  <form role="form">
+  	<div class="form-group">
+  	<textarea class="form-control" ng-model="service._id" rows="3" required></textarea>
+  </div>
+<button type="submit"  class="btn btn-primary btn-sm" ng-click="createOffer()" >Add offer</button>
+  </form>
+ 
+<!-- <button type="submit" ng-click="deleteOffer()"  class="btn btn-primary btn-sm">Add Offer</button>
+  </div> -->
