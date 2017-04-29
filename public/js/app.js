@@ -53,7 +53,7 @@
         })
 
         .state('checkout', {
-          url: "/checkout",
+          url: "/service/:id/checkout",
           templateUrl: "public/views/checkout.html",
           controller: "PaymentController"
 
@@ -66,63 +66,83 @@
 
         })
 
-           .state('complain', {
-            url: "/service/:id/complain",
-            templateUrl: "public/views/complains.html",
-            controller: "ServiceController"
+        .state('complain', {
+          url: "/service/:id/complain",
+          templateUrl: "public/views/complains.html",
+          controller: "ServiceController"
 
-           })
+        })
 
 
         .state('signup', {
-        url: "/signup",
-        templateUrl: "public/views/signup.html",
-        controller: "SignUpCtrl"
+          url: "/signup",
+          templateUrl: "public/views/signup.html",
+          controller: "SignUpCtrl"
         })
 
         .state('login', {
-        url: "/login",
-        templateUrl: "public/views/login.html",
-        controller: "LoginCtrl"
+          url: "/login",
+          templateUrl: "public/views/login.html",
+          controller: "LoginCtrl"
         })
 
         .state('signupsp', {
-        url: "/signupsp",
-        templateUrl: "public/views/signupsp.html",
-        controller: "SignUpSPCtrl"
+          url: "/signupsp",
+          templateUrl: "public/views/signupsp.html",
+          controller: "SignUpSPCtrl"
         })
 
 
         .state('createService', {
-            url: "/api/addService",
+<<<<<<< HEAD
+          url: "/api/addService",
+          templateUrl: "public/views/createService.html",
+          controller: "SController"
+=======
+            url: "/addService",
             templateUrl: "public/views/createService.html",
             controller: "SController"
-
-           })
-
-           .state('updateService', {
-           url: "/api/updateService",
-           templateUrl: "public/views/updateService.html",
-           controller: "SController"
-
-          })
-
-         .state('updateUser', {
-        url: "/api/updateUser",
-        templateUrl: "public/views/updateUser.html",
-        controller: "UController"
+>>>>>>> bb8ba7f76a6857b9e99864b29fd966938ac687c4
 
         })
-       .state('serviceProvider', {
-       url: "/serviceProvider",
-       templateUrl: "public/views/serviceProvider.html",
-       controller: "ServiceProviderController"
+
+<<<<<<< HEAD
+        .state('updateService', {
+          url: "/api/updateService",
+          templateUrl: "public/views/updateService.html",
+          controller: "SController"
+=======
+           .state('updateService', {
+           url: "/updateService",
+           templateUrl: "public/views/updateService.html",
+           controller: "SController"
+>>>>>>> bb8ba7f76a6857b9e99864b29fd966938ac687c4
+
+        })
+
+<<<<<<< HEAD
+        .state('updateUser', {
+          url: "/api/updateUser",
+          templateUrl: "public/views/updateUser.html",
+          controller: "UController"
+=======
+         .state('updateUser', {
+        url: "/updateUser",
+        templateUrl: "public/views/updateUser.html",
+        controller: "UController"
+>>>>>>> bb8ba7f76a6857b9e99864b29fd966938ac687c4
+
+        })
+        .state('serviceProvider', {
+          url: "/serviceProvider",
+          templateUrl: "public/views/serviceProvider.html",
+          controller: "ServiceProviderController"
         })
 
         .state('userProfile', {
-        url: "/userProfile",
-        templateUrl: "public/views/userProfile.html",
-        controller: "ServiceProviderController"
+          url: "/userProfile",
+          templateUrl: "public/views/userProfile.html",
+          controller: "ServiceProviderController"
         })
 
 
@@ -132,7 +152,7 @@
 
 
 
-  var checkLoggedin = function($q, $timeout, $http, $location, $rootScope) {
+var checkLoggedin = function($q, $timeout, $http, $location, $rootScope) {
   var deferred = $q.defer();
 
   $http.get('/loggedin').success(function(user) {

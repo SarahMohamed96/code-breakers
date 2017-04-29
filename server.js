@@ -34,11 +34,8 @@ require('./config/passport')(passport);
 
 var engines = require('consolidate');
 app.set('views', path.join(__dirname, '/public/views'));
-// app.engine('html', engines.mustache);
 app.set('view engine', 'html');
-// app.use(router);
 
-//app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
@@ -47,7 +44,6 @@ app.use('/public', express.static(__dirname + "/public" ));
 app.use('/node_modules', express.static(__dirname + "/node_modules"));
 app.use(express.static(__dirname+ '/public'));
 app.use(cookieParser());
-// app.use(router);
 app.use(session({
   secret: 'this is the secret',
   resave: true,
@@ -58,7 +54,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-//app.use(morgan('dev'));
 
 
 
@@ -241,6 +236,10 @@ app.post("/createReview", reviewController.createReview, function(req, res){
 
 app.post("/getReviews", reviewController.getAllReviews, function(req, res){
 
+});
+
+//kareemabdelaziz
+app.post('/api/rating', serviceController.updateRating,function(req, res){
 });
 
 

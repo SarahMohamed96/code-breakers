@@ -55,6 +55,10 @@
    min-height: 30px;
 }
 
+.col-sm-5{
+  color: green;
+}
+
 
 .ng-valid       {  }
 .ng-invalid     {  }

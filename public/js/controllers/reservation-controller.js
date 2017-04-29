@@ -43,7 +43,7 @@
                   var token2 = token.id;
                   console.log(token2);
                   var data = {
-                    token: token.id
+                    token: token.id,
                   }
                   console.log(data);
                   $http.post('/checkout', data).then(function(response) {

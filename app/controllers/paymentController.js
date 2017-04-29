@@ -1,4 +1,6 @@
 var stripe= require('stripe')('sk_test_IHpYlc4fvoVyRJzbkFHgMAax');
+var randomstring=require("randomstring");
+
 
 //Payment controller = create Payment
 let paymentController = {
@@ -19,11 +21,11 @@ let paymentController = {
           if (charge){
             console.log("successfully paid!");
             console.log(Token);
-            var paid = "You have successfully paid!!";
+            console.log(randomstring.generate(7));
+            var paid = "You have successfully paid!! Your Careem promocode is: " + randomstring.generate(7);
             res.json(paid);
           }
       });
-
     }
   }
 
