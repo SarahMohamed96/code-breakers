@@ -23,11 +23,7 @@ var serviceproviderSchema = mongoose.Schema({
 //       ref : 'complaint'
 //     }]
 
-  // facebook: {
-  // 	id: String,
-  // 	token: String,
-  // 	name: String
-  // }
+
 });
 
 // methods ======================

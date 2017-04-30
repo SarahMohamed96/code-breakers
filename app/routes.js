@@ -24,17 +24,6 @@ var smtpTransport = nodemailer.createTransport({
     tls: {rejectUnauthorized: false},
     debug:true
 });
-//module.exports = emailController;
-
-
-
-// router.get('/',function(req, res){
-// 	  res.render('complains.ejs');
-// 	});
-//
-// router.get('/addreview',function(req, res){
-// 	  res.render('reviews.ejs');
-// 	});
 
 
 //nadeen
@@ -53,13 +42,6 @@ router.get('/addservice', function(req, res){
    res.render('addservice');
    console.log("addservice");
 });
-
-//kareem
-
-// router.get('/index',function(req,res){
-// 	res.sendfile('views/index.html');
-// });
-
 
 router.get('/send',function(req,res){
 	var mailOptions={

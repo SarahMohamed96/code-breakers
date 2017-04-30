@@ -157,7 +157,13 @@ app.get ('/api/deleteService', serviceController.deleteService, function(req,res
 //merna
 
     app.post("/login", passport.authenticate('local-login'), function(req, res) {
+      console.log("signed in");
+      console.log(req.user._id);
       res.json(req.user);
+    });
+
+    app.post("/loginsp", passport.authenticate('local-loginsp'), function(req, res) {
+      res.json(req.serviceprovider);
     });
 
     // handle logout
@@ -169,6 +175,10 @@ app.get ('/api/deleteService', serviceController.deleteService, function(req,res
     // loggedin
     app.get("/loggedin", function(req, res) {
       res.send(req.isAuthenticated() ? req.user : '0');
+    });
+
+    app.get("/loggedin", function(req, res) {
+      res.send(req.isAuthenticated() ? req.serviceprovider : '0');
     });
 
     // signup

@@ -51,4 +51,27 @@ module.exports = function(passport) {
 	  }
 	));
 
+  passport.use('local-loginsp', new LocalStrategy(
+    function(email, password, done) {
+      ServiceProvider.findOne({
+        email: email.toLowerCase()
+      }, function(err, serviceprovider) {
+        // if there are any errors, return the error before anything else
+           if (err)
+               return done(err);
+
+           // if no user is found, return the message
+           if (!serviceprovider)
+               return done(null, false);
+
+           // if the user is found but the password is wrong
+           if (!serviceprovider.validPassword(password))
+               return done(null, false);
+
+           // all is well, return successful user
+           return done(null, serviceprovider);
+      });
+    }
+  ));
+
   }

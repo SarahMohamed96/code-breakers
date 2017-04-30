@@ -1,0 +1,211 @@
+<nav class="navbar navbar-default">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+
+         </div>
+
+         <div id="navbar" class="navbar-collapse collapse">
+           <ul class="nav navbar-nav navbar-right">
+             <li><a ui-sref="profile">Profile <span class="sr-only">(current)</span></a></li>
+
+           </ul>
+         </div><!--/.nav-collapse -->
+       </div><!--/.container-fluid -->
+     </nav>
+<div class="container-fluid">
+
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4></h4>
+
+      <div class="input-group">
+        <input type="text" ng-model="search.text" name = "search"  class="form-control" placeholder="Search By Keyword....">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit" ng-click = "searchByKeyword()" class="form-group">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+
+      <div class="row">
+
+           <h5></h5>
+
+           <div class="classWithPad">
+             <button type="button"  class="btn btn-primary btn-sm" ng-click = "searchByOffers()">Search By Current Offers</button>
+           </div>
+
+           <div class="classWithPad">
+             <button type="button" class="btn btn-primary btn-sm" ng-click = "searchByRating()">Search By Highest Rating</button>
+           </div>
+
+            <div class="classWithPad">
+             <button type="button"  class="btn btn-primary btn-sm" ng-click = "searchByDate()">Search By Recently Added</button>
+           </div>
+
+     </div>
+
+  <div class="row">
+     <div class="classWithPad">
+
+        <form id="tableForm" method="post">
+          <select class="selectpicker" data-style="btn-info" ng-model = "selectpicker.text" name="selectpicker">
+
+              <option value="" selected>Search By Category</option>
+              <option name="table1" value="Cinema">Cinema</option>
+              <option name="table1" value="Concerts">Concerts</option>
+              <option name="table2" value="Escape Rooms">Escape Rooms</option>
+              <option name="table3" value="Laser Tag">Laser Tag</option>
+              <option name="table3" value="Outdoor Activties">Outdoor Activties</option>
+              <option name="table3" value="Camps">Camps</option>
+              <option name="table3" value="Indoor Skiing">Indoor Skiing</option>
+
+
+         </select>
+          <input type="submit" class="btn btn-primary btn-xs" ng-click = "searchByCategory()"  />
+       </form>
+    </div>
+    <div class="classWithPad">
+    <form id="tableForm"  method="post">
+        <select class="selectpicker" data-style="btn-info" ng-model = "selectpicker.text" name="selectpicker">
+
+
+                <option value="" selected>Search By Location</option>
+                <option name="table1" value="6th of October">6th of October</option>
+                <option name="table2" value="Agouza">Agouza</option>
+                <option name="table3" value="Ard el Golf">Ard el Golf</option>
+                <option name="table3" value="Dokki">Dokki</option>
+                <option name="table3" value="Downtown">Downtown</option>
+                <option name="table3" value="El Katameya">El Katameya</option>
+                <option name="table3" value="El Obour City">El Obour City</option>
+
+        </select>
+          <input type="submit" class="btn btn-primary btn-xs" ng-click = "searchByLocation()"/>
+    </form>
+  </div>
+
+
+
+ </div>
+</div>
+   <div class="col-sm-7 col-md-push-3">
+   <div ng-show="!services.length">
+      <h4>Oh no! No Matches</h4>
+      <h5>(Don't give up - check the spelling, or try search filters!)</h5>
+  </div>
+</div>
+
+    <div class="col-sm-8 col-md-push-0">
+          <div  ng-repeat="service in services track by $index">
+           <div class=" col-sm-3">
+
+            <div class="thumbnail">
+              <a ui-sref="service({id: service._id})">
+              <img src="http://placehold.it/800x600">
+                <div class="caption">
+                  <h4 class="text-center"><strong>{{service.serviceName}}</strong></h4>
+              </div>
+            </div>
+          </div>
+       </div>
+
+    </div>
+  </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="container">
+<div>
+<form method = "GET" class = "form-group">
+ <div>
+   <input type = "text" ng-model="search.text" name = "search" placeholder="Search By Keyword....">
+   <button type="submit"  ng-click = "searchByKeyword()" class="form-group"> submit</button>
+</div>
+</form>
+</div>
+
+
+
+           <form id="tableForm" method="post">
+           <select class="selectpicker" data-style="btn-info" ng-model = "selectpicker.text" name="selectpicker">
+             <optgroup label="Select Category">
+
+               <option name="table1" value="Cinema">Cinema</option>
+               <option name="table2" value="Escape Rooms">Escape Rooms</option>
+               <option name="table3" value="Laser Tag">Laser Tag</option>
+               <option name="table3" value="Outdoor Activties">Outdoor Activties</option>
+               <option name="table3" value="Camps">Camps</option>
+               <option name="table3" value="Indoor Skiing">Indoor Skiing</option>
+           </optgroup>
+         </select>
+         <input type="submit" ng-click = "searchByCategory()" class="form-group"/>
+        </form>
+
+        <form id="tableForm"  method="post">
+      	    <select class="selectpicker" data-style="btn-info" ng-model = "selectpicker.text" name="selectpicker">
+      	        <optgroup label="Select Location">
+
+      	            <option name="table1" value="6th of October">6th of October</option>
+      	            <option name="table2" value="Agouza">Agouza</option>
+      	            <option name="table3" value="Ard el Golf">Ard el Golf</option>
+      							<option name="table3" value="Dokki">Dokki</option>
+      							<option name="table3" value="Downtown">Downtown</option>
+      							<option name="table3" value="El Katameya">El Katameya</option>
+      							<option name="table3" value="El Obour City">El Obour City</option>
+      	        </optgroup>
+      	    </select>
+      	    <input type="submit" ng-click = "searchByLocation()" class="form-group" />
+      	</form>
+
+        <div class="row">
+
+            <div class="col-xs-16 col-md-12">
+
+               <button type="button"  class="btn btn-primary btn-md" ng-click = "searchByDate()">Recently Added</button>
+
+               <button type="button"  class="btn btn-primary btn-md" ng-click = "searchByOffers()">Current Offers</button>
+
+               <button type="button" class="btn btn-primary btn-md" ng-click = "searchByRating()">Rating</button>
+            </div>
+          </div>
+
+
+
+ <h1>Hello {{search}}!</h1>
+  <div class="row" ng-repeat="service in services track by $index">
+ <a ui-sref="service({id: service._id})">
+  <h2>{{service.serviceName}}</h2>
+  <h2>{{service.location}}</h2>
+</div>
+</div> -->

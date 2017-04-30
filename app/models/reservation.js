@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcryptjs');
-
+//schema for reservation
 var ReservationSchema = mongoose.Schema({
 	serviceid: {
 		type: String,
@@ -20,28 +20,25 @@ var ReservationSchema = mongoose.Schema({
 		required: true
 	}
 });
-
+//exporting reservation
 var Reservation = module.exports = mongoose.model('Reservation', ReservationSchema);
 
-
-// module.exports.createReservation = function(newReservation, callback){
-// 	newReservation.save(callback);
-// }
-//
+//function change reservation
 module.exports.changeReservation = function(changeReservation, callback){
 	changeReservation.save(callback);
 }
-//
-//
+
+//function delete reservation
 module.exports.deleteReservation = function(deletedReservation, callback){
 	deletedReservation.remove(callback);
 }
 
+//function create promo code
 module.exports.createPromoCode = function(text, callback){
 	createPromoCode.save(callback);
 }
 
-
+//function get user by username
 module.exports.getUserByUsername = function(userName, callback){
 	var query = {userName: userName};
 	Reservation.findOne(query, callback);

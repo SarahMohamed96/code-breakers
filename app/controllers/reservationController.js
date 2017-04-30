@@ -58,10 +58,6 @@ let reservationController = {
             console.log(title2);
           }
         })
-            // trackReservation4.update({
-            //   reservation_date: req.body.new_reservation_date,
-            //   reservation_hour: req.body.new_reservation_hour
-            // });
 
           }
       if (!(trackReservation4)) {
